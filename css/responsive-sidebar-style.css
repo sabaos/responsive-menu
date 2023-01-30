@@ -33,7 +33,7 @@ body{
     user-select: none;
     left: 0;
     width: 250px;
-    margin-top: 39px;
+    margin-top: 60px;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
     background: linear-gradient(180deg, #fc466b, #3f5efb 100%);
@@ -76,6 +76,11 @@ body{
 }
 input[type="checkbox"]:checked ~ #sidebarMenu{
     transform: translateX(0);
+}
+input[type=checkbox]{
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
 }
 .sidebarIconToggle{
     transition: all 0.3s;
@@ -148,6 +153,7 @@ input[name="menu"]{
 .tab-content{
     position: relative;
     display: none;
+    padding: 60px 0px 0px 0px ;
 }
 .tab-content::after{
     content: "";
