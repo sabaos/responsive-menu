@@ -9,6 +9,12 @@ body{
     margin: 0;
     font-family: 'Varela Round', sans-serif;
 }
+.content{
+    background-color: #f6f6f6;
+    padding:  20px;
+    width: 100%;
+    max-width: 100%;
+}
 .header{
     display: block;
     margin: 0 auto;
@@ -30,15 +36,23 @@ body{
     margin-top: 60px;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #fc466b, #3f5efb 100%)
+    background: linear-gradient(180deg, #fc466b, #3f5efb 100%);
+    z-index: 99999;
+}
+.name{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .sidebarMenuInner{
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.sidebarMenuInner li{
-    list-style: none;
+.sidebarMenuInner label{
+    display: block;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -46,22 +60,27 @@ body{
     cursor: pointer;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.sidebarMenuInner li span{
+.name span{
     display: block;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.5);
 }
-.sidebarMenuInner li a{
+.sidebarMenuInner label{
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
 }
-.sidebarMenuInner li:hover{
+.sidebarMenuInner label:hover{
     background: rgba(0, 0, 0, 0.1);
 }
 input[type="checkbox"]:checked ~ #sidebarMenu{
     transform: translateX(0);
+}
+input[type=checkbox]{
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
 }
 .sidebarIconToggle{
     transition: all 0.3s;
@@ -127,5 +146,19 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         transform: translateY(-1250px);
         height: 385px;
     }
-    
+}
+input[name="menu"]{
+    display: none;
+}
+.tab-content{
+    position: relative;
+    display: none;
+    padding: 60px 0px 0px 0px ;
+}
+.tab-content::after{
+    content: "";
+    clear: both;
+}
+input[name="menu"]:checked + .tab-content{
+    display: block;
 }
